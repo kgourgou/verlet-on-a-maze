@@ -1,0 +1,4 @@
+__pycache__/
+*.ipynb
+simulator.egg-info/
+.ipynb_checkpoints
