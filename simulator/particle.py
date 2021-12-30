@@ -1,16 +1,28 @@
-from dataclasses import dataclass
 import numpy as np
+from numpy.linalg import norm
 import matplotlib.pyplot as plt
 
 GRAVITY = 0.9
-DRAG = 0.3
+DRAG = 1
 
 
-@dataclass
+def create_particle(curr_pos, prev_pos=None):
+    if prev_pos:
+        return Particle(curr_pos=np.array(curr_pos), prev_pos=np.array(prev_pos))
+    else:
+        return Particle(curr_pos=np.array(curr_pos), prev_pos=np.array(curr_pos))
+
+
+def particle_distance(p1, p2):
+    return norm(p1.curr_pos - p2.curr_pos)
+
+
 class Particle:
     # holds the current and previous position of a particle
-    curr_pos: np.array
-    prev_pos: np.array
+    def __init__(self, curr_pos, prev_pos):
+        self.init_pos = curr_pos
+        self.curr_pos = curr_pos
+        self.prev_pos = prev_pos
 
     def update_location(self):
         dx = self.compute_dx()
@@ -20,9 +32,7 @@ class Particle:
 
     def compute_speed(self):
         dx = self.compute_dx()
-        print(self.curr_pos)
-        print(self.prev_pos)
-        speed = np.sqrt(np.sum(dx ** 2))
+        speed = norm(dx)
         return speed
 
     def compute_dx(self):
