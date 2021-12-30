@@ -1,0 +1,5 @@
+celluloid==0.2.0
+ipython==7.30.1
+matplotlib==3.5.1
+numpy==1.21.5
+setuptools==59.4.0
