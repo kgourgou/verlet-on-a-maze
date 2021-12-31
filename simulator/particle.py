@@ -19,10 +19,10 @@ def particle_distance(p1, p2):
 
 class Particle:
     # holds the current and previous position of a particle
-    def __init__(self, curr_pos, prev_pos):
+    def __init__(self, curr_pos: np.array, prev_pos: np.array):
         self.init_pos = curr_pos
-        self.curr_pos = curr_pos
-        self.prev_pos = prev_pos
+        self.curr_pos = curr_pos.astype(np.float)
+        self.prev_pos = prev_pos.astype(np.float)
 
     def update_location(self):
         dx = self.compute_dx()
