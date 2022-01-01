@@ -7,8 +7,16 @@ from simulator.conditions import (
 )
 
 
-def simulate(particles, links, PINNED_PARTICLES, initial_link_distances, camera):
-    NUMBER_OF_TIMESTEPS = 10
+def simulate(
+    particles,
+    links,
+    PINNED_PARTICLES,
+    initial_link_distances,
+    camera,
+    number_of_passes=3,
+    number_of_steps=100,
+):
+    NUMBER_OF_TIMESTEPS = number_of_steps
     for _ in tqdm(range(NUMBER_OF_TIMESTEPS)):
         # draw points
         draw_points(particles)
@@ -30,5 +38,5 @@ def simulate(particles, links, PINNED_PARTICLES, initial_link_distances, camera)
             links,
             initial_link_distances,
             pinned_particles=PINNED_PARTICLES,
-            number_of_passes=3,
+            number_of_passes=number_of_passes,
         )

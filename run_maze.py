@@ -55,6 +55,13 @@ initial_link_distances = defaultdict(default_distance)
 pinned_particles = {(0, 0): np.array([0.0, 10.0]), (3, 9): np.array([10000.0, 10.0])}
 
 
-simulate(particles, links, pinned_particles, initial_link_distances, camera)
+simulate(
+    particles,
+    links,
+    pinned_particles,
+    initial_link_distances,
+    camera,
+    number_of_steps=40,
+)
 animation = camera.animate()
 plt.show()
