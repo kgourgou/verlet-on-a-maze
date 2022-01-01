@@ -31,9 +31,6 @@ mapping = {
 }
 
 
-# TODO fix this so that it is plottable.
-
-
 for i, j in product(range(WIDTH), range(HEIGHT)):
     particles[(i, j)] = create_particle([i, j])
     for wall, exists in maze.grid[i][j].walls.items():
@@ -47,15 +44,15 @@ for i, j in product(range(WIDTH), range(HEIGHT)):
 fig = plt.figure()
 camera = Camera(fig)
 
-# particles = {i: elem for i, elem in enumerate(particles.values())}
+# TODO make them snap at integer coordinates.
 
 
 def default_distance():
-    return defaultdict(lambda x=None: 0.01)
+    return defaultdict(lambda x=None: 1.0)
 
 
 initial_link_distances = defaultdict(default_distance)
-pinned_particles = {(0, 0): np.array([0.0, 10.0]), (4, 9): np.array([1000.0, 10.0])}
+pinned_particles = {(0, 0): np.array([0.0, 10.0]), (3, 9): np.array([10000.0, 10.0])}
 
 
 simulate(particles, links, pinned_particles, initial_link_distances, camera)

@@ -30,5 +30,5 @@ def simulate(particles, links, PINNED_PARTICLES, initial_link_distances, camera)
             links,
             initial_link_distances,
             pinned_particles=PINNED_PARTICLES,
-            number_of_passes=20,
+            number_of_passes=3,
         )
