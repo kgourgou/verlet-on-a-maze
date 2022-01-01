@@ -61,7 +61,7 @@ simulate(
     pinned_particles,
     initial_link_distances,
     camera,
-    number_of_steps=40,
+    number_of_steps=10,
 )
 animation = camera.animate()
 plt.show()

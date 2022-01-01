@@ -1,4 +1,5 @@
 from tqdm import tqdm
+import seaborn as sns
 
 from simulator.plotting_utils import draw_lines, draw_points
 from simulator.conditions import (
@@ -23,6 +24,7 @@ def simulate(
 
         # draw lines
         draw_lines(particles, links)
+        sns.despine()
         camera.snap()
 
         # particle loop

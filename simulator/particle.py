@@ -42,4 +42,4 @@ class Particle:
         return f"{self.curr_pos}"
 
     def show(self):
-        plt.plot(self.curr_pos[0], self.curr_pos[1], "ro")
+        plt.plot(self.curr_pos[0], self.curr_pos[1], "ro", markersize=10)
