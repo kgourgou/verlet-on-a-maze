@@ -7,6 +7,6 @@ as well as an additional attribute of the vertices, their location in 2D space. 
 and progressively deform the graph to one that admits simpler policies for maze solving, e.g., just go to the next nearest
 neighbor on your right until you reach the exit. 
 
-
+To play with `run_pymaze.py` you will need to install my version of [pymaze](https://github.com/kgourgou/pymaze).
 
 
