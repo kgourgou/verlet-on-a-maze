@@ -1,6 +1,6 @@
 from tqdm import tqdm
 import seaborn as sns
-
+from collections import defaultdict
 from simulator.plotting_utils import draw_lines, draw_points
 from simulator.conditions import (
     apply_boundary_condition,
@@ -18,7 +18,7 @@ def simulate(
     number_of_steps=100,
 ):
     NUMBER_OF_TIMESTEPS = number_of_steps
-    for _ in tqdm(range(NUMBER_OF_TIMESTEPS)):
+    for i in tqdm(range(NUMBER_OF_TIMESTEPS)):
         # draw points
         draw_points(particles)
 
@@ -32,7 +32,13 @@ def simulate(
             p.update_location()
 
             # check boundary constraint
-            apply_boundary_condition(p)
+            # apply_boundary_condition(p)
+            p.round_location()
+
+        def default_distance():
+            return defaultdict(lambda x=None: 10)
+
+        initial_link_distances = defaultdict(default_distance)
 
         # link constraints
         apply_link_constraints(

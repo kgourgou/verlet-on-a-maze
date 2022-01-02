@@ -30,6 +30,10 @@ class Particle:
         self.curr_pos += dx
         self.curr_pos -= np.array([0, GRAVITY])
 
+    def round_location(self):
+        self.curr_pos = np.round(self.curr_pos)
+        self.prev_pos = np.round(self.prev_pos)
+
     def compute_speed(self):
         dx = self.compute_dx()
         speed = norm(dx)
