@@ -1,12 +1,8 @@
-# Deforming graphs with verlet
-
-An experiment in deforming graphs with the verlet algorithm. Still incomplete.
+# Literally applying the verlet method on a graph that defines a maze. 
 
 The motivating example for this was a maze represented as a graph. We have vertices V and edges E 
-as well as an additional attribute of the vertices, their location in 2D space. Then we assign masses to them 
-and progressively deform the graph to one that admits simpler policies for maze solving, e.g., just go to the next nearest
-neighbor on your right until you reach the exit. 
+as well as an additional attribute of the vertices, their location in 2D space. 
 
 To play with `run_pymaze.py` you will need to install my version of [pymaze](https://github.com/kgourgou/pymaze).
 
-
+This is not yet useful in any way, there are some TODOs that I have to take care of. 
