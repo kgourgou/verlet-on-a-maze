@@ -5,4 +5,4 @@ as well as an additional attribute of the vertices, their location in 2D space. 
 
 To play with `run_pymaze.py` you will need to install my version of [pymaze](https://github.com/kgourgou/pymaze).
 
-This is not yet useful in any way, there are some TODOs that I have to take care of. 
+**This is not yet useful in any way** (except as an implementation of verlet for fun), **there are some TODOs that I have to take care of.**
